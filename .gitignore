@@ -1,0 +1,8 @@
+/.idea/
+.godot/
+/android/
+.DS_Store
+/export/
+/ansible/vault_pass
+/addons/gamepush/Demo/
+/ansible/

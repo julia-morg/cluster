@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://r2btrivj70yr"]
+
+[ext_resource type="Script" uid="uid://dxwlhbheov2ok" path="res://scenes/settings/settings_screen.gd" id="1_srqes"]
+[ext_resource type="PackedScene" uid="uid://dtrdeypofn3qf" path="res://scenes/ui/buttons/base_button.tscn" id="2_hbblf"]
+[ext_resource type="Script" uid="uid://d26qmjvnpc1y1" path="res://addons/spin_button/src/controls/sb_spin_button.gd" id="4_7q1qo"]
+[ext_resource type="Texture2D" uid="uid://cpwkdu8xyso30" path="res://resources/ui/arrow_right.png" id="5_n20dh"]
+[ext_resource type="Texture2D" uid="uid://bw56c62ljbsny" path="res://resources/ui/arrow_left.png" id="6_7q1qo"]
+[ext_resource type="Texture2D" uid="uid://j7cugyl2gwvm" path="res://resources/ui/close.png" id="10_htr5u"]
+
+[node name="SettingsScreen" type="Node2D"]
+script = ExtResource("1_srqes")
+
+[node name="UIRoot" type="Control" parent="."]
+custom_minimum_size = Vector2(648, 1152)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="UIRoot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIRoot/Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 104.0
+offset_top = 100.0
+offset_right = 504.0
+offset_bottom = 596.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SoundCheck" type="CheckButton" parent="UIRoot/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Sound"
+expand_icon = true
+
+[node name="VibroCheck" type="CheckButton" parent="UIRoot/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Vibro"
+
+[node name="Panel" type="Panel" parent="UIRoot/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="LanguageSpinButton" type="Button" parent="UIRoot/Panel/VBoxContainer/Panel"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 397.0
+offset_bottom = 87.0
+script = ExtResource("4_7q1qo")
+items = Array[String](["Русский", "English"])
+item_count = 2
+loop = true
+next_icon = ExtResource("5_n20dh")
+prev_icon = ExtResource("6_7q1qo")
+title_block_visibility = 0
+
+[node name="Exit" parent="UIRoot/Panel" instance=ExtResource("2_hbblf")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 90.0
+grow_horizontal = 0
+texture_normal = ExtResource("10_htr5u")
+
+[connection signal="toggled" from="UIRoot/Panel/VBoxContainer/SoundCheck" to="." method="_on_sound_check_toggled"]
+[connection signal="toggled" from="UIRoot/Panel/VBoxContainer/VibroCheck" to="." method="_on_vibro_check_toggled"]
+[connection signal="item_selected" from="UIRoot/Panel/VBoxContainer/Panel/LanguageSpinButton" to="." method="_on_language_spin_button_item_selected"]

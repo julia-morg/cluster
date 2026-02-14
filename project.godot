@@ -1,0 +1,46 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Cluster"
+config/description="Clusterize words"
+run/main_scene="uid://cvcc5e2tl8c88"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/image="uid://lxuk1myuosu6"
+config/icon="uid://lxuk1myuosu6"
+
+[autoload]
+
+G="*res://scenes/g.gd"
+
+[display]
+
+window/size/viewport_width=648
+window/size/viewport_height=1152
+window/handheld/orientation=1
+
+[gui]
+
+theme/custom="uid://ce0ojmeni7d2i"
+theme/custom_font="uid://bgt0nixfkpetm"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://resources/i18n/translation.en.translation", "res://resources/i18n/translation.ru.translation")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

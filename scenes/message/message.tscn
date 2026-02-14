@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6ll41mqw5xgl"]
+
+[ext_resource type="Script" uid="uid://c1tkuo2lr436g" path="res://scenes/message/message_screen.gd" id="1_a78qr"]
+[ext_resource type="Texture2D" uid="uid://j7cugyl2gwvm" path="res://resources/ui/close.png" id="2_t7a3g"]
+[ext_resource type="PackedScene" uid="uid://dtrdeypofn3qf" path="res://scenes/ui/buttons/base_button.tscn" id="3_anioa"]
+
+[node name="Message" type="Node2D"]
+script = ExtResource("1_a78qr")
+
+[node name="UIRoot" type="Control" parent="."]
+custom_minimum_size = Vector2(648, 1152)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="UIRoot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIRoot/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="UIRoot/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SubtitleLabel" type="Label" parent="UIRoot/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Exit" parent="UIRoot/Panel" instance=ExtResource("3_anioa")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 90.0
+texture_normal = ExtResource("2_t7a3g")

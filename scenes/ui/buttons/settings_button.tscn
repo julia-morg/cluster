@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcbky1nanpur1"]
+
+[ext_resource type="PackedScene" uid="uid://dtrdeypofn3qf" path="res://scenes/ui/buttons/base_button.tscn" id="1_jxe1r"]
+[ext_resource type="Script" uid="uid://dxnmm2w3ejn4w" path="res://scenes/ui/buttons/settings_button.gd" id="2_j1mmx"]
+[ext_resource type="Texture2D" uid="uid://bv5gomw4lcuev" path="res://resources/ui/gear.png" id="2_v456u"]
+
+[node name="SettingsButton" instance=ExtResource("1_jxe1r")]
+custom_minimum_size = Vector2(80, 80)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_right = 0.0
+offset_bottom = 100.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_v456u")
+script = ExtResource("2_j1mmx")
