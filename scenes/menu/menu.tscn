@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bdh4uvw2o7dlw" path="res://scenes/menu/menu.gd" id="1_037ec"]
 [ext_resource type="PackedScene" uid="uid://b8q485si5chg3" path="res://scenes/ui/currency.tscn" id="1_mcvr8"]
+[ext_resource type="Texture2D" uid="uid://br5jpo3wwp0n3" path="res://resources/back.tres" id="2_037ec"]
 [ext_resource type="PackedScene" uid="uid://dcbky1nanpur1" path="res://scenes/ui/buttons/settings_button.tscn" id="2_e0arn"]
-[ext_resource type="Texture2D" uid="uid://c0ciuroifyq1b" path="res://resources/back.png" id="2_y1o0p"]
 
 [node name="StartScreen" type="Node2D"]
 script = ExtResource("1_037ec")
@@ -15,10 +15,15 @@ anchors_preset = 0
 offset_right = 648.0
 offset_bottom = 1152.0
 
-[node name="Background" type="Sprite2D" parent="UIRoot"]
-scale = Vector2(0.5581597, 1.2607844)
-texture = ExtResource("2_y1o0p")
-centered = false
+[node name="Back" type="TextureRect" parent="UIRoot"]
+layout_mode = 0
+offset_right = 652.0
+offset_bottom = 1152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_037ec")
+expand_mode = 4
+stretch_mode = 6
 
 [node name="CenterContainer" type="CenterContainer" parent="UIRoot"]
 layout_mode = 1

@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvcc5e2tl8c88"]
+[gd_scene load_steps=3 format=3 uid="uid://cvcc5e2tl8c88"]
 
 [ext_resource type="Script" uid="uid://ctgsv0gb7chw2" path="res://scenes/main/main.gd" id="1_hyk8p"]
+[ext_resource type="Texture2D" uid="uid://br5jpo3wwp0n3" path="res://resources/back.tres" id="2_iuonh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_hyk8p")
+
+[node name="Back" type="TextureRect" parent="."]
+offset_right = 652.0
+offset_bottom = 1152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_iuonh")
+expand_mode = 4
+stretch_mode = 6

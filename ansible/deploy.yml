@@ -1,0 +1,25 @@
+- name: Deploy TTD export
+  hosts: all
+  become: true
+
+  vars:
+    work_dir: "/home/{{ ansible_user }}/cluster"
+
+  tasks:
+    - name: Ensure target directory exists
+      ansible.builtin.file:
+        path: "{{ work_dir }}"
+        state: directory
+        mode: "0755"
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+
+    - name: Sync export directory to server
+      ansible.posix.synchronize:
+        src: "{{ playbook_dir }}/../../export/"
+        dest: "{{ work_dir }}/"
+        delete: yes
+        recursive: yes
+      delegate_to: localhost
+      become: false
+
